@@ -6,15 +6,17 @@
  * Time: 17:57
  */
 
-require "./Orcamento.php";
-require "./CalculaImposto.php";
+require_once ("./Orcamento.php");
+require ("./CalculaImposto.php");
+require_once ('./ICMS.php');
+require_once ('./ISS.php');
 
 $reforma = new Orcamento(500);
 $imposto = new CalculaImposto();
 echo sprintf(
     "<p>O valor com ICMS é: %s </p>
      <p>O valor do ISS é: %s </p>",
-    $imposto->calcImposto($reforma,'ICMS'),
-    $imposto->calcImposto($reforma, 'ISS')
+    $imposto->calcImposto( $reforma, new ICMS() ),
+    $imposto->calcImposto( $reforma, new ISS() )
 );
 

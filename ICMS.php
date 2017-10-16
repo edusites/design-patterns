@@ -8,7 +8,7 @@
 
 class ICMS
 {
-    public static function calcICMS(Orcamento $Orcamento)
+    public static function calcImposto(Orcamento $Orcamento)
     {
         return $Orcamento->getValor() * 1.05;
     }

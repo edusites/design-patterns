@@ -6,8 +6,6 @@
  * Time: 17:53
  */
 
-require_once ('ICMS.php');
-require_once ('ISS.php');
 
 class CalculaImposto{
 
@@ -25,15 +23,18 @@ class CalculaImposto{
      * e se infla a cada método, então vamos retirar a lógica dos
      * calculos e inserir em suas devidas classes por exemplo class
      * ICMS.php terá um método para esta devida finalidade.
+     * Agora vamos eliminar cada if e ao invés de passar uma
+     * String para comparação vamos passar o próprio objeto em si
+     * que executa o seu método que tem o nome generico propositamente
+     * para ser executado e retornado o Imposto de cada finalidade.
+     * Assim a classe que contém toda a lógica fica limpa com apenas
+     * uma linha mesmos que novos impostos forem necessários, e isola
+     * a lógica de diferentes tipos de impostos para classes especificas
+     * a este tipo de cálculo.
     */
     public function calcImposto(Orcamento $Orcamento, $imposto)
     {
-        if($imposto === 'ICMS'){
-            return ICMS::calcICMS($Orcamento);
-            //print_r($Orcamento);
-        }else if($imposto == 'ISS'){
-            return ISS::calcISS($Orcamento);
-        }
+        return $imposto::calcImposto($Orcamento);
 
     }
 
