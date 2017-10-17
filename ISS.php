@@ -6,7 +6,7 @@
  * Time: 20:01
  */
 
-class ISS
+class ISS implements Imposto
 {
     /**
      * @param Orcamento $Orcamento

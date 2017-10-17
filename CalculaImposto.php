@@ -32,7 +32,7 @@ class CalculaImposto{
      * a lógica de diferentes tipos de impostos para classes especificas
      * a este tipo de cálculo.
     */
-    public function calcImposto(Orcamento $Orcamento, $imposto)
+    public function calcImposto(Orcamento $Orcamento, Imposto $imposto)
     {
         return $imposto::calcImposto($Orcamento);
 

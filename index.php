@@ -7,6 +7,7 @@
  */
 
 require_once ("./Orcamento.php");
+require_once ('./Imposto.php');
 require ("./CalculaImposto.php");
 require_once ('./ICMS.php');
 require_once ('./ISS.php');

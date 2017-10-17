@@ -6,8 +6,12 @@
  * Time: 19:57
  */
 
-class ICMS
+class ICMS implements Imposto
 {
+    /**
+     * @param Orcamento $Orcamento
+     * @return float|mixed
+     */
     public static function calcImposto(Orcamento $Orcamento)
     {
         return $Orcamento->getValor() * 1.05;
